@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>🐱 MeowFacts API</h1>
+        <div id="fact">Click the button to get a cat fact!</div>
+        <button onclick="getFact()">Get New Fact</button>
+    </div>
+
+    <script>
+        function createCat() {
+            const cat = document.createElement("div");
+            cat.classList.add("cat");
+            cat.innerText = "🐱";
+
+            cat.style.left = Math.random() * 100 + "vw";
+            cat.style.fontSize = Math.random() * 40 + 30 + "px";
+            cat.style.animationDuration = Math.random() * 10 + 15 + "s";
+
+            document.body.appendChild(cat);
+
+            setTimeout(() => {
+                cat.remove();
+            }, 30000);
+        }
+
+        setInterval(createCat, 700);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
